@@ -66,3 +66,5 @@ The game loop handles:
 * Drawing everything to the OLED each frame
 * Game-over handling and timed restart
 
+Taken from https://github.com/Crappie-Coding/Nano-Shmup , my other Git account :)
+
