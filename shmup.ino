@@ -8,14 +8,14 @@ U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
 #define FIRE_BTN 12
 
 
-int shipX = 64;
-int shipY = 32;
+uint8_t shipX = 64;
+uint8_t shipY = 32;
 
-int bulletY = -10;
-int bulletX = -10;
+uint8_t bulletY = -10;
+uint8_t bulletX = -10;
 
-int asteroidX = 20;
-int asteroidY = 12;
+uint8_t asteroidX = 20;
+uint8_t asteroidY = 12;
 
 uint8_t asteroidSpeed = 1;
 int score = 0;
