@@ -1,7 +1,7 @@
 #include <U8g2lib.h>
 #include <Wire.h>
 
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C screen(U8G2_R0, U8X8_PIN_NONE);
 
 #define JOY_X A0
 #define JOY_Y A1
@@ -42,15 +42,15 @@ static const unsigned char ship_bits[] U8X8_PROGMEM = {
 
 void setup() {
   pinMode(FIRE_BTN, INPUT_PULLUP);
-  u8g2.begin();
+  screen.begin();
 }
 
 void loop() {
   if (isGameOver) {
-    u8g2.clearBuffer();
-    u8g2.setFont(u8g2_font_10x20_tr);
-    u8g2.drawStr(20, 32, gameOverMsg);
-    u8g2.sendBuffer();
+    screen.clearBuffer();
+    screen.setFont(screen_font_10x20_tr);
+    screen.drawStr(20, 32, gameOverMsg);
+    screen.sendBuffer();
     
     if (millis() - gameOverTime > 3000) {
       score = 0;
@@ -124,19 +124,19 @@ void loop() {
     asteroidX = random(0, 120);
   }
 
-  u8g2.clearBuffer();
-  u8g2.setFont(u8g2_font_6x10_tr); 
-  u8g2.drawStr(0, 10, "Score: ");
-  u8g2.drawStr(40, 10, scoreText);
+  screen.clearBuffer();
+  screen.setFont(screen_font_6x10_tr); 
+  screen.drawStr(0, 10, "Score: ");
+  screen.drawStr(40, 10, scoreText);
 
-  u8g2.drawXBMP(shipX, shipY, 8, 8, ship_bits);
+  screen.drawXBMP(shipX, shipY, 8, 8, ship_bits);
 
   if (bulletActive) {
-    u8g2.drawBox(bulletX, bulletY, 3, 3);
+    screen.drawBox(bulletX, bulletY, 3, 3);
   }
 
-  u8g2.drawDisc(asteroidX, asteroidY, 3);
-  u8g2.sendBuffer();
+  screen.drawDisc(asteroidX, asteroidY, 3);
+  screen.sendBuffer();
 
   delay(10);
 }
