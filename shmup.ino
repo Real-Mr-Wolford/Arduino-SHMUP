@@ -48,7 +48,7 @@ void setup() {
 void loop() {
   if (isGameOver) {
     screen.clearBuffer();
-    screen.setFont(screen_font_10x20_tr);
+    screen.setFont(u8g2_font_10x20_tr);
     screen.drawStr(20, 32, gameOverMsg);
     screen.sendBuffer();
     
@@ -125,7 +125,7 @@ void loop() {
   }
 
   screen.clearBuffer();
-  screen.setFont(screen_font_6x10_tr); 
+  screen.setFont(u8g2_font_6x10_tr); 
   screen.drawStr(0, 10, "Score: ");
   screen.drawStr(40, 10, scoreText);
 
