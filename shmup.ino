@@ -11,8 +11,8 @@ U8G2_SSD1306_128X64_NONAME_F_HW_I2C screen(U8G2_R0, U8X8_PIN_NONE);
 uint8_t shipX = 64;
 uint8_t shipY = 32;
 
-uint8_t bulletY = -10;
-uint8_t bulletX = -10;
+int8_t bulletY = -10;
+int8_t bulletX = -10;
 
 uint8_t asteroidX = 20;
 uint8_t asteroidY = 12;
